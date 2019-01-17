@@ -1,3 +1,13 @@
 {
-  "app": "node bin/cdk-alb-ref-issue.js"
+  "app": "node bin/cdk-alb-ref-issue.js",
+  "context": {
+    "availability-zones:account=409779713686:region=us-east-1": [
+      "us-east-1a",
+      "us-east-1b",
+      "us-east-1c",
+      "us-east-1d",
+      "us-east-1e",
+      "us-east-1f"
+    ]
+  }
 }
