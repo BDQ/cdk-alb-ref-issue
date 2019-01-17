@@ -10,12 +10,14 @@ export class AppStack extends cdk.Stack {
   constructor(parent: cdk.App, name: string, props: AppStackProps) {
     super(parent, name);
 
-    // define an App load balance
-    new elbv2.ApplicationLoadBalancer(this, "lb", {
+    // @ts-ignore
+    const lb = new elbv2.ApplicationLoadBalancer(this, "lb", {
       vpc: props.vpc,
       internetFacing: true
     });
 
-    // console.log(lb);
+    // uncomment next to lines to fix
+    // const lbResource = lb.node.findChild("Resource") as elbv2.CfnLoadBalancer;
+    // lbResource.addOverride("DependsOn", []);
   }
 }
